@@ -22,12 +22,14 @@ function getServerInfo() {
  
     
     if(list.hasChildNodes()){
-        list.removeChild(list.childNodes[0]);
+      while (list.hasChildNodes()) {
+        list.removeChild(list.lastChild);
+      }
     }
 
     /*if(data.code == 10004) {
       serverName.appendChild(document.createTextNode("No Server Found."));
-    }*/ else {
+    }*/
 
       membersOnline = data.members.length;
       for(let i = 0; i < data.members.length; i++){
@@ -40,9 +42,6 @@ function getServerInfo() {
         let userDiscriminator = currentMember.discriminator;
         let userStatus        = currentMember.status;
 
-
-
-
         let listItem = document.createElement('li');
         
         let innerList = document.createElement('ul');
@@ -53,13 +52,11 @@ function getServerInfo() {
         let status        = document.createElement('li');
         let avatar        = document.createElement('img');
         
-
-
         name.appendChild(document.createTextNode("User: "+userName));
         discriminator.appendChild(document.createTextNode("Discriminator: #"+userDiscriminator))
         id.appendChild(document.createTextNode("ID: "+userId));
         status.appendChild(document.createTextNode("Status: "+userStatus));
-        //avatar.setAttribute('src','http://via.placeholder.com/128x128');
+        //avatar.setAttribute('src','http://via.placeholder.com/128x128'); //data saving placeholder for dev
         avatar.setAttribute('src',userAvatar);
 
         innerList.appendChild(name);
@@ -72,7 +69,7 @@ function getServerInfo() {
         list.appendChild(listItem);        
       }
       console.log(membersOnline);  
-    }
+    
     return list;
   }
   widgetRequest.send();
