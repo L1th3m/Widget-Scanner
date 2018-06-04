@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<link rel="stylesheet" href="app.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Widget Scraper<span> alpha</span></h1>
+      <div class="lookup-list">
+        <div class="spacer"></div>
+        <div>
+          <input type="number" placeholder="Enter Server ID" step="0" id="server-id-input"/>
+          <button class="button secondary expanded" onclick="getServerInfo()">Lookup</button>
+        </div>
+        <div>
+          <h3 id="server-name"></h3>
+          <ul id="members"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

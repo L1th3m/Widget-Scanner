@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="app.css">
+  
+  body
+    
+    div.wrapper
+      h1 Widget Scraper
+        span  alpha
+      div.lookup-list
+        div.spacer
+        div
+          input(type="number" placeholder="Enter Server ID" step="0" id="server-id-input")
+          button.button.secondary.expanded(onclick="getServerInfo()") Lookup
+        
+        div
+          h3#server-name
+          ul#members
+      
+    script(src="app.js")
